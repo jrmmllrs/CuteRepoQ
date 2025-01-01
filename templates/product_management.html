@@ -7,7 +7,7 @@
     <title>Product Management</title>
   </head>
   <body>
-    <button onclick="history.back()" class="btn back-btn">Go Home</button>
+    <a href="{{ url_for('home') }}" class="btn back-btn">Go Home</a>
     <h2>Product Management</h2>
 
     <!-- Add Product Button -->
@@ -54,13 +54,12 @@
             </button>
 
             <!-- Delete Button -->
-            <a href="{{ url_for('delete_product', product_id=product[0]) }}">
-              <button
-                class="btn delete-btn"
-                onclick="return confirm('Are you sure you want to delete this product?');"
-              >
-                Delete
-              </button>
+            <button
+            class="btn delete-btn"
+            onclick="confirmDelete('{{ url_for('delete_product', product_id=product[0]) }}')"
+          >
+            Delete
+          </button>
             </a>
           </td>
         </tr>
@@ -175,72 +174,7 @@
         </form>
       </div>
     </div>
-
-    <script>
-      // Modal and Button Targeting
-      const addProductModal = document.getElementById("addProductModal");
-      const openAddProductModalBtn = document.getElementById(
-        "openAddProductModalBtn"
-      );
-      const closeAddProductModalBtn = document.getElementById(
-        "closeAddProductModalBtn"
-      );
-
-      const editProductModal = document.getElementById("editProductModal");
-      const closeEditProductModalBtn = document.getElementById(
-        "closeEditProductModalBtn"
-      );
-
-      // Open Add Product Modal
-      openAddProductModalBtn.onclick = function () {
-        addProductModal.style.display = "block";
-      };
-
-      // Close Add Product Modal
-      closeAddProductModalBtn.onclick = function () {
-        addProductModal.style.display = "none";
-      };
-
-      // Open Edit Product Modal
-      function openEditProductModal(button) {
-        const productId = button.getAttribute("data-product-id");
-        const productName = button.getAttribute("data-name");
-        const productDescription = button.getAttribute("data-description");
-        const productPrice = button.getAttribute("data-price");
-        const productStock = button.getAttribute("data-stock");
-        const productCategory = button.getAttribute("data-category");
-        const productStatus = button.getAttribute("data-status");
-
-        // Prefill the form with product data
-        document.getElementById("productId").value = productId;
-        document.getElementById("productName").value = productName;
-        document.getElementById("productDescription").value =
-          productDescription;
-        document.getElementById("productPrice").value = productPrice;
-        document.getElementById("productStock").value = productStock;
-        document.getElementById("productCategory").value = productCategory;
-        document.getElementById("productStatus").value = productStatus;
-
-        // Show the modal
-        editProductModal.style.display = "block";
-      }
-
-      // Close Edit Product Modal
-      closeEditProductModalBtn.onclick = function () {
-        editProductModal.style.display = "none";
-      };
-
-      // Close Modal if clicked outside of the modal content
-      window.addEventListener("click", function (event) {
-        if (event.target === addProductModal) {
-          addProductModal.style.display = "none";
-        }
-        if (event.target === editProductModal) {
-          editProductModal.style.display = "none";
-        }
-      });
-    </script>
-
-    <script src="/static/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/extra.js"></script>
   </body>
 </html>

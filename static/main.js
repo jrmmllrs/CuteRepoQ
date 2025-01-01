@@ -21,33 +21,6 @@ closeAddModalBtn.onclick = function () {
   addCustomerModal.style.display = "none";
 };
 
-// Open Edit Product Modal
-function openEditProductModal(button) {
-  const productId = button.getAttribute("data-product-id");
-  const productName = button.getAttribute("data-name");
-  const productDescription = button.getAttribute("data-description");
-  const productPrice = button.getAttribute("data-price");
-  const productStock = button.getAttribute("data-stock");
-  const productCategory = button.getAttribute("data-category");
-  const productStatus = button.getAttribute("data-status");
-
-  // Prefill the form with product data
-  document.getElementById("productId").value = productId;
-  document.getElementById("productName").value = productName;
-  document.getElementById("productDescription").value = productDescription;
-  document.getElementById("productPrice").value = productPrice;
-  document.getElementById("productStock").value = productStock;
-  document.getElementById("productCategory").value = productCategory;
-  document.getElementById("productStatus").value = productStatus;
-
-  // Dynamically set the form action URL to the correct update endpoint
-  document.getElementById("editProductForm").action =
-    "/update_product/" + productId;
-
-  // Show the modal
-  editProductModal.style.display = "block";
-}
-
 // Close Edit Customer Modal
 closeEditModalBtn.onclick = function () {
   customerModal.style.display = "none";
@@ -86,4 +59,22 @@ function openEditModal(button) {
 
   // Show the modal
   modal.style.display = "block";
+}
+
+function confirmDelete(deleteUrl) {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Yes, delete it!",
+    cancelButtonText: "Cancel",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Perform the deletion only if confirmed
+      window.location.href = deleteUrl;
+    }
+  });
 }
