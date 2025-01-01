@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/main.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-wrapper">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form method="POST">
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <p class="error-message">{{ message }}</p>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <footer>
+        <p>Forgot your password? <a href="#">Reset it here</a>.</p>
+      </footer>
+    </div>
+  </div>
+  </body>
+</html>

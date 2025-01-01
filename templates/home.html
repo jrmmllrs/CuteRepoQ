@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/main.css" />
+    <title>Home</title>
+  </head>
+  <body>
+    <h2>Welcome, {{ user }}!</h2>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('management') }}">Management</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <div class="content">
+      <h3>Your Learning Journey</h3>
+      <p>
+        Explore what you've learned and discover new topics. Keep pushing the
+        boundaries of knowledge and embrace the future of innovation.
+      </p>
+      <ul>
+        <li>Advanced HTML & CSS Techniques</li>
+        <li>Responsive Design Principles</li>
+        <li>Interactive Web Elements</li>
+        <li>Designing with Accessibility in Mind</li>
+      </ul>
+      <div class="home-button-container">
+        <button>Start New Journey</button>
+        <button>Explore More Topics</button>
+      </div>
+    </div>
+  </body>
+</html>
