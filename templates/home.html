@@ -12,7 +12,7 @@
       <a href="{{ url_for('home') }}">Home</a>
       <a href="{{ url_for('management') }}">Management</a>
       <a href="{{ url_for('about') }}">About</a>
-      <a href="{{ url_for('logout') }}">Logout</a>
+      <a href="#" onclick="confirmLogout()">Logout</a>
     </nav>
     <div class="content">
       <h3>Your Learning Journey</h3>
@@ -31,5 +31,7 @@
         <button>Explore More Topics</button>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="/static/main.js"></script>
   </body>
 </html>

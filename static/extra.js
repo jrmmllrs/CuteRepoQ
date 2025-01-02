@@ -67,13 +67,24 @@ window.addEventListener("click", function (event) {
 function confirmDelete(deleteUrl) {
   Swal.fire({
     title: "Are you sure?",
-    text: "You won't be able to revert this!",
+    text: "This action cannot be undone.",
     icon: "warning",
     showCancelButton: true,
-    confirmButtonColor: "#d33",
-    cancelButtonColor: "#3085d6",
+    confirmButtonColor: "#e74c3c", // Custom color for confirmation
+    cancelButtonColor: "#95a5a6", // Softer color for cancel
     confirmButtonText: "Yes, delete it!",
-    cancelButtonText: "Cancel",
+    cancelButtonText: "No, keep it",
+    background: "#f7f7f7", // Soft background color for the dialog
+    showClass: {
+      popup: "swal2-noanimation", // Smooth transition for appearance
+    },
+    buttonsStyling: true, // Allow default styling for buttons
+    customClass: {
+      title: "swal2-title-custom", // Style the title
+      text: "swal2-text-custom", // Style the text
+      confirmButton: "swal2-confirm-btn", // Button styling
+      cancelButton: "swal2-cancel-btn", // Button styling
+    },
   }).then((result) => {
     if (result.isConfirmed) {
       // Perform the deletion only if confirmed
@@ -81,3 +92,36 @@ function confirmDelete(deleteUrl) {
     }
   });
 }
+
+// Add this CSS to your stylesheet
+const style = document.createElement("style");
+style.textContent = `
+  .custom-swal {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  }
+  .swal-title {
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .swal-text {
+    color: #34495e;
+    font-size: 16px;
+  }
+  .swal-button--danger {
+    background-color: #e74c3c;
+    padding: 8px 24px;
+    border-radius: 6px;
+  }
+  .swal-button--cancel {
+    background-color: #95a5a6;
+    padding: 8px 24px;
+    border-radius: 6px;
+  }
+  .swal-button:focus {
+    box-shadow: none;
+  }
+`;
+document.head.appendChild(style);

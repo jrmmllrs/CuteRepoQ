@@ -137,7 +137,7 @@ def add_product():
                 (name, description, price, stock, category, status))
     mysql.connection.commit()
     cur.close()
-    flash('Product added successfully!', 'success')
+    flash('', 'success')
     return redirect(url_for('management'))
 
 
@@ -151,7 +151,7 @@ def delete_product(product_id):
     cur.execute("DELETE FROM products WHERE id = %s", (product_id,))
     mysql.connection.commit()
     cur.close()
-    flash('Product deleted successfully!', 'success')
+    flash('', 'success')
     return redirect(url_for('management'))
 
 
@@ -184,7 +184,7 @@ def update_product(product_id):
     cur.close()
 
     # Flash success message and redirect to the management page
-    flash('Product updated successfully!', 'success')
+    flash('', 'success')
     return redirect(url_for('management'))
 
 
