@@ -159,27 +159,6 @@ h2 {
   font-weight: bold;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  background-color: #00796b;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-  background-color: #004d40;
-}
-
 .content {
   background-color: white;
   border-radius: 8px;

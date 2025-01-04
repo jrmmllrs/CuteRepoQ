@@ -4,10 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/main.css" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <title>Product Management</title>
   </head>
   <body>
-    <a href="{{ url_for('home') }}" class="btn back-btn">Go Home</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('management') }}"
+                >Management</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="confirmLogout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <h2>Product Management</h2>
 
     <!-- Add Product Button -->
@@ -38,7 +73,7 @@
           <td>{{ product[5] }}</td>
           <td>{{ product[6] }}</td>
           <td>
-            <!-- Edit Button - Opens the modal -->
+            <!-- Edit Button -->
             <button
               class="btn edit-btn"
               data-product-id="{{ product[0] }}"
@@ -55,12 +90,11 @@
 
             <!-- Delete Button -->
             <button
-            class="btn delete-btn"
-            onclick="confirmDelete('{{ url_for('delete_product', product_id=product[0]) }}')"
-          >
-            Delete
-          </button>
-            </a>
+              class="btn delete-btn"
+              onclick="confirmDelete('{{ url_for('delete_product', product_id=product[0]) }}')"
+            >
+              Delete
+            </button>
           </td>
         </tr>
         {% endfor %}
@@ -174,7 +208,50 @@
         </form>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/static/extra.js"></script>
+    <script>
+      // Open Add Product Modal
+      document.getElementById("openAddProductModalBtn").onclick = function () {
+        document.getElementById("addProductModal").style.display = "block";
+      };
+
+      // Close Add Product Modal
+      document.getElementById("closeAddProductModalBtn").onclick = function () {
+        document.getElementById("addProductModal").style.display = "none";
+      };
+
+      // Open Edit Product Modal (You will populate the modal with data dynamically)
+      function openEditProductModal(button) {
+        // Set values in modal
+        document.getElementById("productId").value =
+          button.getAttribute("data-product-id");
+        document.getElementById("productName").value =
+          button.getAttribute("data-name");
+        document.getElementById("productDescription").value =
+          button.getAttribute("data-description");
+        document.getElementById("productPrice").value =
+          button.getAttribute("data-price");
+        document.getElementById("productStock").value =
+          button.getAttribute("data-stock");
+        document.getElementById("productCategory").value =
+          button.getAttribute("data-category");
+        document.getElementById("productStatus").value =
+          button.getAttribute("data-status");
+
+        document.getElementById("editProductModal").style.display = "block";
+      }
+
+      // Close Edit Product Modal
+      document.getElementById("closeEditProductModalBtn").onclick =
+        function () {
+          document.getElementById("editProductModal").style.display = "none";
+        };
+    </script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>

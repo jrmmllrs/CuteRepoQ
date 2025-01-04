@@ -3,52 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/static/main.css" />
     <title>About</title>
+    <style>
+      /* Custom CSS to center the content vertically */
+      .about-section {
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <div class="about-wrapper">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('management') }}"
+                >Management</a
+              >
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('about') }}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="confirmLogout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="about-section">
       <h2>About Us</h2>
-      <div class="about-content">
-        <h3>Welcome, {{ user }}!</h3>
+      <div class="mt-4">
         <p>
           Welcome to our platform! We aim to provide the best experience in
           learning and technology. Our platform is designed to help you achieve
           your goals with ease and efficiency. Explore new possibilities,
           enhance your skills, and become a part of a growing community!
         </p>
-        <div class="button-container">
-          <button>Learn More</button>
-          <button>Contact Us</button>
-        </div>
-      </div>
-
-      <!-- Visuals Section -->
-      <div class="about-visuals">
-        <div class="visual-card">
-          <img src="https://via.placeholder.com/300" alt="Learning Image 1" />
-          <h4>Innovative Learning</h4>
-          <p>
-            We provide a wide range of courses to enhance your knowledge and
-            skills.
-          </p>
-        </div>
-        <div class="visual-card">
-          <img src="https://via.placeholder.com/300" alt="Learning Image 2" />
-          <h4>Collaborative Community</h4>
-          <p>
-            Join a community of learners, share knowledge, and grow together.
-          </p>
-        </div>
-        <div class="visual-card">
-          <img src="https://via.placeholder.com/300" alt="Learning Image 3" />
-          <h4>Future Ready</h4>
-          <p>
-            Stay ahead with the latest trends and technologies that shape the
-            future.
-          </p>
+        <div class="button-container mt-3">
+          <button class="btn btn-primary me-2">Prince Rance</button>
+          <button class="btn btn-secondary">Jerome Millares</button>
         </div>
       </div>
     </div>
+
+    <!-- Visuals Section -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="../static/images/1.jfif"
+              alt="Learning Image 1"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Innovative Learning</h4>
+              <p class="card-text">
+                We provide a wide range of courses to enhance your knowledge and
+                skills.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="../static/images/2.jfif"
+              alt="Learning Image 2"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Collaborative Community</h4>
+              <p class="card-text">
+                Join a community of learners, share knowledge, and grow
+                together.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="../static/images/3.jfif"
+              alt="Learning Image 3"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Future Ready</h4>
+              <p class="card-text">
+                Stay ahead with the latest trends and technologies that shape
+                the future.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SweetAlert Confirmation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script>
+      function confirmLogout() {
+        swal({
+          title: "Are you sure?",
+          text: "You will be logged out!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((willLogout) => {
+          if (willLogout) {
+            window.location.href = "{{ url_for('logout') }}";
+          }
+        });
+      }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </body>
 </html>
