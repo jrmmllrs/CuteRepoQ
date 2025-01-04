@@ -216,7 +216,7 @@ def delete_customer(customer_id):
     cur.execute("DELETE FROM customers WHERE id = %s", (customer_id,))
     mysql.connection.commit()
     cur.close()
-    flash('Customer deleted successfully!', 'success')
+    flash('', 'success')
     return redirect(url_for('management'))
 
 
