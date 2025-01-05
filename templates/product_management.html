@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../static/images/education.png" type="image/x-icon">
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -132,7 +133,7 @@
         {% endfor %}
       </tbody>
     </table>
-
+<br>
     <!-- Pagination Controls -->
     <div style="text-align: center; margin-top: 20px">
       <a href="{{ url_for('management', page=1) }}" class="pagination-link"
@@ -184,7 +185,7 @@
             <option>Out of Stock</option>
             <option>Low Stock</option>
           </select>
-          <button type="submit">Add Product</button>
+          <button type="submit" class="team-button btn-primary" >Add Product</button>
         </form>
       </div>
     </div>
@@ -236,7 +237,7 @@
             <option>Out of Stock</option>
             <option>Low Stock</option>
           </select>
-          <button type="submit">Save Changes</button>
+          <button type="submit" class="team-button btn-primary">Save Changes</button>
         </form>
       </div>
     </div>

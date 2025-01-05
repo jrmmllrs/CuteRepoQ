@@ -9,6 +9,11 @@
       href="../static/images/education.png"
       type="image/x-icon"
     />
+    <link
+      rel="shortcut icon"
+      href="../static/images/education.png"
+      type="image/x-icon"
+    />
     <title>Login</title>
   </head>
   <body>
@@ -28,7 +33,7 @@
             placeholder="Enter your password"
             required
           />
-          <button type="submit">Login</button>
+          <button type="submit" class="team-button btn-primary">Login</button>
           <center>
             {% with messages = get_flashed_messages(with_categories=true) %} {%
             if messages %} {% for category, message in messages %}

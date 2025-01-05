@@ -1,126 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../static/images/education.png"
+      type="image/x-icon"
+    />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/static/main.css" />
     <title>Python Learning Journey</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="fab fa-python me-2 fa-lg"></i>
-                Python Journey
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="management"><i class="fas fa-cog me-1"></i> Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about"><i class="fas fa-info-circle me-1"></i> About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="confirmLogout()">
-                            <i class="fas fa-sign-out-alt me-1"></i> Logout
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="">
+          <i class="fab fa-python me-2 fa-lg"></i>
+          Python Journey
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="management"
+                ><i class="fas fa-cog me-1"></i> Management</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about"
+                ><i class="fas fa-info-circle me-1"></i> About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="confirmLogout()">
+                <i class="fas fa-sign-out-alt me-1"></i> Logout
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-
+    <br />
+    <!-- Page Header -->
+    <div class="page-header">
+      <h1 class="display-4 fw-bold">Things We've learned</h1>
+      <p class="lead">Elective 4 (Special Topics on Web and Mobile 2)</p>
+    </div>
     <!-- Hero Section -->
-<br><br><br><br>
 
     <!-- Content -->
     <div class="container mb-5">
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="topic-card">
-                    <div class="topic-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h4>Core Python Concepts</h4>
-                    <p>Master the fundamentals of Python including syntax, variables, and essential data types.</p>
-                </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-code"></i>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="topic-card">
-                    <div class="topic-icon">
-                        <i class="fas fa-puzzle-piece"></i>
-                    </div>
-                    <h4>Programming Fundamentals</h4>
-                    <p>Learn about functions, control structures, and proper error handling techniques.</p>
-                </div>
+            <h4>Core Python Concepts</h4>
+            <p>
+              We've mastered the fundamentals of Python, including syntax,
+              variables, and essential data types, forming the foundation for
+              our programming journey.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-puzzle-piece"></i>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="topic-card">
-                    <div class="topic-icon">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <h4>Object-Oriented Programming</h4>
-                    <p>Understand classes, objects, inheritance, and OOP principles in Python.</p>
-                </div>
+            <h4>Programming Fundamentals</h4>
+            <p>
+              We've learned the core principles of programming, such as
+              functions, control structures, and error handling techniques,
+              vital for writing efficient code.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="topic-card">
+            <div class="topic-icon">
+              <i class="fas fa-cubes"></i>
             </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="topic-card">
-                    <div class="topic-icon">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h4>Data Analysis</h4>
-                    <p>Work with Pandas and NumPy to analyze and manipulate data effectively.</p>
+            <h4>Object-Oriented Programming</h4>
+            <p>
+              We’ve delved into the concepts of classes, objects, inheritance,
+              and OOP principles in Python, enhancing our ability to build
+              scalable applications.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-laptop-code"></i>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="topic-card">
-                    <div class="topic-icon">
-                        <i class="fas fa-file-code"></i>
-                    </div>
-                    <h4>File Handling</h4>
-                    <p>Learn to read, write, and manage structured data formats like CSV and JSON.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="topic-card">
-                    <div class="topic-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h4>Automation</h4>
-                    <p>Create scripts for web scraping and automating repetitive tasks.</p>
-                </div>
+                <h4>Introduction to Web Development</h4>
+                <p>
+                    We've gained foundational knowledge in building web applications, including HTML, CSS, and JavaScript basics.
+                </p>
             </div>
         </div>
-
+        <div class="col-md-6 col-lg-4">
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h4>Database Fundamentals</h4>
+                <p>
+                    We've learned about databases, including how to create, manage, and query relational databases using SQL.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="topic-card">
+                <div class="topic-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h4>Basic Backend Development</h4>
+                <p>
+                    We've explored the basics of backend development, learning how to set up server-side applications and APIs.
+                </p>
+            </div>
+        </div>
+        
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <script>
-        function confirmLogout() {
-            swal({
-                title: "Ready to leave?",
-                text: "You will be logged out of your session.",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            }).then((willLogout) => {
-                if (willLogout) {
-                    window.location.href = "/logout";
-                }
-            });
-        }
+      function confirmLogout() {
+        swal({
+          title: "Ready to leave?",
+          text: "You will be logged out of your session.",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((willLogout) => {
+          if (willLogout) {
+            window.location.href = "/logout";
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
