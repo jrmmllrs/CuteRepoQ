@@ -35,17 +35,16 @@ window.addEventListener("click", function (event) {
 });
 
 function openEditModal(button) {
-  const modal = document.getElementById("customerModal");
-
-  // Extract data attributes
+  // Get customer data from the table row
   const customerId = button.getAttribute("data-customer-id");
-  const fullName = button.getAttribute("data-full-name");
-  const email = button.getAttribute("data-email");
-  const phone = button.getAttribute("data-phone");
-  const address = button.getAttribute("data-address");
-  const status = button.getAttribute("data-status");
+  const row = button.closest("tr");
+  const fullName = row.querySelector("td:nth-child(1)").innerText.trim();
+  const email = row.querySelector("td:nth-child(2)").innerText.trim();
+  const phone = row.querySelector("td:nth-child(3)").innerText.trim();
+  const address = row.querySelector("td:nth-child(4)").innerText.trim();
+  const status = row.querySelector("td:nth-child(5)").innerText.trim();
 
-  // Populate the modal fields
+  // Set modal field values
   document.getElementById("customerId").value = customerId;
   document.getElementById("fullName").value = fullName;
   document.getElementById("email").value = email;
@@ -53,12 +52,12 @@ function openEditModal(button) {
   document.getElementById("address").value = address;
   document.getElementById("status").value = status;
 
-  // Set form action dynamically
+  // Dynamically set form action
   const form = document.getElementById("customerForm");
   form.action = `/edit_customer/${customerId}`;
 
-  // Show the modal
-  modal.style.display = "block";
+  // Show modal
+  document.getElementById("customerModal").style.display = "block";
 }
 
 function confirmDelete(deleteUrl) {
