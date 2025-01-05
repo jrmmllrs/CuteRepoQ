@@ -11,70 +11,6 @@
   --hover-transform: translateY(-5px);
 }
 
-.page-header {
-  background: var(--primary-gradient);
-  color: white;
-  padding: 3rem 0;
-  margin-bottom: 2rem;
-  text-align: center;
-  border-radius: 0 0 1.5rem 1.5rem;
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.75rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-2px);
-}
-
-.btn-outline-secondary {
-  border-color: var(--text-light);
-  color: var(--text-dark);
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.75rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.btn-outline-secondary:hover {
-  background-color: var(--text-dark);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.table-container {
-  background: white;
-  border-radius: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.modal-content {
-  border-radius: 1rem;
-  padding: 2rem;
-}
-
-.pagination-link {
-  color: var(--primary-color);
-  font-weight: 500;
-  margin: 0 0.5rem;
-  text-decoration: none;
-}
-
-.pagination-link.disabled {
-  color: var(--text-light);
-  pointer-events: none;
-}
-
-
-
 body {
   font-family: "Inter", sans-serif;
   background-color: #f8fafc;
@@ -570,6 +506,68 @@ form button:hover {
 
 .back-btn:hover {
   background-color: #ddd;
+}
+
+.page-header {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 3rem 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+  border-color: var(--text-light);
+  color: var(--text-dark);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--text-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.table-container {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.pagination-link {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+.pagination-link.disabled {
+  color: var(--text-light);
+  pointer-events: none;
 }
 
 /* Table styles */

@@ -59,11 +59,6 @@
                 <i class="fas fa-info-circle me-1"></i> About
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="confirmLogout()">
-                <i class="fas fa-sign-out-alt me-1"></i> Logout
-              </a>
-            </li>
           </ul>
         </div>
       </div>
@@ -159,17 +154,38 @@
         <h3 id="modalTitle">Edit Customer</h3>
         <form id="customerForm" method="POST">
           <input type="hidden" name="customer_id" id="customerId" />
-          <input type="text" name="full_name" id="fullName" placeholder="Full Name" required />
-          <input type="email" name="email" id="email" placeholder="Email" required />
-          <input type="text" name="phone" id="phone" placeholder="Phone Number" required />
-          <textarea name="address" id="address" placeholder="Address"></textarea>
+          <input
+            type="text"
+            name="full_name"
+            id="fullName"
+            placeholder="Full Name"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            placeholder="Phone Number"
+            required
+          />
+          <textarea
+            name="address"
+            id="address"
+            placeholder="Address"
+          ></textarea>
           <select name="status" id="status">
-              <option value="Active">Active</option>
-              <option value="Inactive">Inactive</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
           </select>
           <button type="submit" id="submitBtn">Save Changes</button>
-      </form>
-      
+        </form>
       </div>
     </div>
 
