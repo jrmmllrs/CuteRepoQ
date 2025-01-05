@@ -6,7 +6,6 @@
 }
 
 body {
-  background: #e0f7fa;
   color: #333;
   padding: 20px;
   line-height: 1.6;
@@ -53,7 +52,14 @@ body {
   margin-bottom: 1.5rem;
   font-weight: bold;
 }
-
+.about-section {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
 .login-container input {
   width: 100%;
   padding: 12px;
