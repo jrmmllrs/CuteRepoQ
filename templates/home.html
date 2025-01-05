@@ -1,96 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../static/images/education.png"
-      type="image/x-icon"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/static/main.css" />
-    <title>Home</title>
-  </head>
-  <body>
+    <title>Python Learning Journey</title>
+</head>
+<body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <!-- Left-aligned Home -->
-        <a class="navbar-brand" href="{{ url_for('home') }}">Home</a>
-        <!-- Toggler for mobile -->
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Right-aligned links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('management') }}"
-                >Management</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('about') }}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" onclick="confirmLogout()">Logout</a>
-            </li>
-          </ul>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fab fa-python me-2 fa-lg"></i>
+                Python Journey
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-th-large me-1"></i> Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-cog me-1"></i> Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about"><i class="fas fa-info-circle me-1"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="confirmLogout()">
+                            <i class="fas fa-sign-out-alt me-1"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
+    <!-- Hero Section -->
+<br><br><br><br>
+
     <!-- Content -->
-    <div class="container mt-5 pt-5">
-      <h3>Things We've Learned in Python</h3>
-      <p>Here are some key topics we've explored in our Python journey:</p>
-      <ul>
-        <li><b>Core Python Concepts:</b> Syntax, variables, and data types.</li>
-        <li>
-          <b>Programming Fundamentals:</b> Functions, control structures, and
-          error handling.
-        </li>
-        <li>
-          <b>Object-Oriented Programming:</b> Classes, objects, and inheritance.
-        </li>
-        <li>
-          <b>Data Analysis:</b> Using libraries like Pandas and NumPy for
-          working with data.
-        </li>
-        <li>
-          <b>File Handling:</b> Reading, writing, and managing structured data
-          like CSV and JSON.
-        </li>
-        <li>
-          <b>Automation:</b> Writing scripts for web scraping and repetitive
-          tasks.
-        </li>
-        <li>
-          <b>Python Frameworks:</b> Basics of Flask and Django for web
-          development.
-        </li>
-      </ul>
-      <div class="home-button-container">
-        <button class="btn btn-primary me-2">Start New Journey</button>
-        <button class="btn btn-outline-secondary">Explore More Topics</button>
-      </div>
-    </div>
+    <div class="container mb-5">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Core Python Concepts</h4>
+                    <p>Master the fundamentals of Python including syntax, variables, and essential data types.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h4>Programming Fundamentals</h4>
+                    <p>Learn about functions, control structures, and proper error handling techniques.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h4>Object-Oriented Programming</h4>
+                    <p>Understand classes, objects, inheritance, and OOP principles in Python.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h4>Data Analysis</h4>
+                    <p>Work with Pandas and NumPy to analyze and manipulate data effectively.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-file-code"></i>
+                    </div>
+                    <h4>File Handling</h4>
+                    <p>Learn to read, write, and manage structured data formats like CSV and JSON.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>Automation</h4>
+                    <p>Create scripts for web scraping and automating repetitive tasks.</p>
+                </div>
+            </div>
+        </div>
+
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-    <script src="/static/main.js"></script>
-  </body>
+    <script>
+        function confirmLogout() {
+            swal({
+                title: "Ready to leave?",
+                text: "You will be logged out of your session.",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then((willLogout) => {
+                if (willLogout) {
+                    window.location.href = "/logout";
+                }
+            });
+        }
+    </script>
+</body>
 </html>
