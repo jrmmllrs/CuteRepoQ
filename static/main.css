@@ -519,7 +519,7 @@ body {
 /* Submit Button */
 .modal-content .btn-primary,
 .modal-content .team-button {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background: var(--primary-gradient);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -528,7 +528,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 1rem;
-  width: 100%;
+  width: 50%;
 }
 
 .modal-content .btn-primary:hover,
