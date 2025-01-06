@@ -79,7 +79,7 @@ body {
 }
 
 .login-container input:focus {
-  border-color: #00796b;
+  border-color: #4c51bf;
   background: #fff;
   box-shadow: 0 0 8px rgba(0, 121, 107, 0.5);
 }
@@ -99,13 +99,13 @@ body {
 }
 
 .login-container footer a {
-  color: #00796b;
+  color: #4c51bf;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .login-container footer a:hover {
-  color: #004d40;
+  color: #4c51bf;
 }
 
 /* Responsive Design */
@@ -268,16 +268,16 @@ body {
 .home-button-container button {
   font-size: 1em;
   padding: 10px 20px;
-  border: 2px solid #00796b;
+  border: 2px solid #4c51bf;
   border-radius: 5px;
   background-color: white;
-  color: #00796b;
+  color: #4c51bf;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .home-button-container button:hover {
-  background-color: #00796b;
+  background-color: #4c51bf;
   color: white;
 }
 
@@ -651,7 +651,7 @@ td {
 
 /* Button to open modal */
 .add-customer-btn {
-  background-color: #00796b;
+  background-color: #4c51bf;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -663,5 +663,5 @@ td {
 }
 
 .add-customer-btn:hover {
-  background-color: #004d40;
+  background-color: #4c51bf;
 }
