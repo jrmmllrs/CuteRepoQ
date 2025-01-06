@@ -108,7 +108,7 @@
           <td>
             <!-- Edit Button -->
             <button
-              class="btn edit-btn"
+              class="btn btn-outline-secondary btn-sm"
               data-product-id="{{ product[0] }}"
               data-name="{{ product[1] }}"
               data-description="{{ product[2] }}"
@@ -123,7 +123,7 @@
 
             <!-- Delete Button -->
             <button
-              class="btn delete-btn"
+              class="btn btn-danger btn-sm"
               onclick="confirmDelete('{{ url_for('delete_product', product_id=product[0]) }}')"
             >
               Delete

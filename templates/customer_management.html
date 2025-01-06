@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      rel="shortcut icon"
-      href="../static/images/education.png"
-      type="image/x-icon"
-    />
-    <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
@@ -35,10 +30,7 @@
   <body>
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center"
-          href="{{ url_for('home') }}"
-        >
+        <a class="navbar-brand d-flex align-items-center" href="home">
           <i class="fab fa-python me-2 fa-lg"></i>
           Python Journey
         </a>
@@ -155,6 +147,7 @@
       </div>
     </div>
     <br />
+
     <!-- Edit Customer Modal -->
     <div id="customerModal" class="modal">
       <div class="modal-content">
@@ -192,9 +185,7 @@
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
           </select>
-          <button type="submit" id="submitBtn" class="team-button btn-primary">
-            Save Changes
-          </button>
+          <button type="submit" id="submitBtn">Save Changes</button>
         </form>
       </div>
     </div>
@@ -218,9 +209,7 @@
             <option>Active</option>
             <option>Inactive</option>
           </select>
-          <button type="submit" class="team-button btn-primary">
-            Add Customer
-          </button>
+          <button type="submit">Add Customer</button>
         </form>
       </div>
     </div>
