@@ -23,6 +23,90 @@
     <link rel="stylesheet" href="/static/main.css" />
 
     <title>About Us</title>
+
+    <style>
+      /* Modal Base Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1050;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-content {
+        position: relative;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        width: 90%;
+        max-width: 500px;
+        padding: 2rem;
+        z-index: 1060;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin: 0;
+      }
+
+      .modal-close {
+        border: none;
+        background: transparent;
+        font-size: 1.25rem;
+        cursor: pointer;
+        color: #64748b;
+        transition: all 0.2s ease;
+      }
+
+      .modal-close:hover {
+        color: #2c3e50;
+        transform: scale(1.1);
+      }
+
+      .modal-body {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #4b5563;
+        text-align: center;
+      }
+
+      .modal-body img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .contact-info {
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -80,23 +164,31 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="text-center">
-              <button class="team-button btn-primary">Prince F. Rance</button>
-              <button class="team-button btn-primary">
+              <button
+                class="team-button btn-primary"
+                data-target="#princeModal"
+              >
+                Prince F. Rance
+              </button>
+              <button
+                class="team-button btn-primary"
+                data-target="#jeromeModal"
+              >
                 Jerome P. Millares
               </button>
+              <br /><br />
+              <p class="lead text-center mb-4">
+                We are a dynamic duo fueled by a shared passion for innovation
+                in the I.T. industry. Guided by the principles of Innovative
+                Learning, Future Readiness, and fostering a Collaborative
+                Community, we strive to bridge gaps and empower individuals and
+                organizations. By blending technical expertise with
+                entrepreneurial vision, we create impactful solutions that drive
+                progress. From developing cutting-edge applications to inspiring
+                the next generation of tech enthusiasts, we are dedicated to
+                leveraging technology to shape a better, more connected future.
+              </p>
             </div>
-            <br />
-            <p class="lead text-center mb-4">
-              We are a dynamic duo fueled by a shared passion for innovation in
-              the I.T. industry. Guided by the principles of Innovative
-              Learning, Future Readiness, and fostering a Collaborative
-              Community, we strive to bridge gaps and empower individuals and
-              organizations. By blending technical expertise with
-              entrepreneurial vision, we create impactful solutions that drive
-              progress. From developing cutting-edge applications to inspiring
-              the next generation of tech enthusiasts, we are dedicated to
-              leveraging technology to shape a better, more connected future.
-            </p>
           </div>
         </div>
       </div>
@@ -144,8 +236,80 @@
       </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <!-- Modal for Prince -->
+    <div class="modal" id="princeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Prince F. Rance</h5>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img src="../static/images/prince.jpg" alt="Prince F. Rance" />
+          <div class="contact-info">
+            <p>
+              <i class="fas fa-envelope me-2"></i>
+              ranceprince05@gmail.com
+            </p>
+            <p>
+              <i class="fas fa-phone me-2"></i>
+              +63 969 525 6200
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Jerome -->
+    <div class="modal" id="jeromeModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Jerome P. Millares</h5>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img src="../static/images/jerome.jpg" alt="Jerome P. Millares" />
+          <div class="contact-info">
+            <p>
+              <i class="fas fa-envelope me-2"></i>
+              jmillares0945@gmail.com
+            </p>
+            <p>
+              <i class="fas fa-phone me-2"></i>
+              +63 945 755 4023
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".team-button");
+        const modals = document.querySelectorAll(".modal");
+        const closeButtons = document.querySelectorAll(".modal-close");
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const targetModal = document.querySelector(button.dataset.target);
+            targetModal.classList.add("active");
+          });
+        });
+
+        closeButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            btn.closest(".modal").classList.remove("active");
+          });
+        });
+
+        modals.forEach((modal) => {
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              modal.classList.remove("active");
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>

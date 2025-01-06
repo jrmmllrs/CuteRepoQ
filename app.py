@@ -205,7 +205,7 @@ def add_customer():
                 (full_name, email, phone, address, status, registration_date))
     mysql.connection.commit()
     cur.close()
-    flash('Customer added successfully!', 'success')
+    flash('', 'success')
     return redirect(url_for('management'))
 
 
@@ -239,7 +239,7 @@ def edit_customer(customer_id):
             WHERE id = %s
         """, (full_name, email, phone, address, status, customer_id))
         mysql.connection.commit()
-        flash('Customer updated successfully!', 'success')
+        flash('', 'success')
         return redirect(url_for('management'))
 
     else:
