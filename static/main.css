@@ -84,31 +84,6 @@ body {
   box-shadow: 0 0 8px rgba(0, 121, 107, 0.5);
 }
 
-.login-container button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: linear-gradient(135deg, #00796b, #004d40);
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 1.1em;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.login-container button:hover {
-  background: linear-gradient(135deg, #005a4e, #00382e);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.login-container button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .error-message {
   color: #e53935;
   font-size: 0.9em;
